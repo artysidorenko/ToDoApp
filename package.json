@@ -4,7 +4,7 @@
   "description": "To Do List App - exercise based on F&amp;C guidelines",
   "main": "logic.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./test.js | tap-spec"
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,9 @@
     "url": "https://github.com/artysidorenko/ToDoApp/issues"
   },
   "homepage": "https://github.com/artysidorenko/ToDoApp#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "tap-spec": "^5.0.0",
     "tape": "^4.9.1"
   }
 }
