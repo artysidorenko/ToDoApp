@@ -9,9 +9,9 @@
   var addTodoForm = document.getElementById('add-todo');
 
   var state = [
-    { id: -3, description: 'first todo' },
-    { id: -2, description: 'second todo' },
-    { id: -1, description: 'third todo' },
+    { id: -3, description: 'Placeholder' },
+    { id: -2, description: 'Another Placeholder' },
+    { id: -1, description: 'A Third and Final Placeholder' },
   ]; // this is our initial todoList
 
   // This function takes a todo, it returns the DOM node representing that todo
@@ -26,6 +26,7 @@
 
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
+    deleteButtonNode.textContent = "✘";
     deleteButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
@@ -34,6 +35,7 @@
 
     // add markTodo button
     var markButtonNode = document.createElement('button');
+    markButtonNode.textContent = "✔";
     markButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.markTodo(state, todo.id);
       update(newState);
@@ -75,7 +77,14 @@
     var todoListNode = document.createElement('ul');
 
     state.forEach(function(todo) {
-      todoListNode.appendChild(createTodoNode(todo));
+      let thisTodoNode = createTodoNode(todo);
+      if (todo.done == true) {
+        thisTodoNode.classList.add("todo-done");
+      }
+      else {
+        thisTodoNode.classList.remove("todo-done");
+      }
+      todoListNode.appendChild(thisTodoNode);
     });
 
     // you may want to add a class for css

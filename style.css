@@ -1,13 +1,100 @@
 
+body {
+  font-family: Courier New;
+  padding: 20px;
+  margin: auto;
+  background-color: #f2ffcc;
+}
+
+h1 {
+  text-align: center;
+  padding: 30px;
+}
 
 #todo-container  {
-  background-color: yellow;
+}
+
+#todo-container>ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0px;
+}
+
+#todo-container>ul>li  {
+  margin-top: 10px;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+}
+
+#todo-container>ul>li>span  {
+  width: 200px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+#todo-container>ul>li>button {
+  align-self: center;
+  background-color: #4d6600;
+  color: lightgrey;
+  border-radius: 15px;
+  border: none;
+  height: 25px;
+  width: 40px;
+  font-size: medium;
+  cursor: pointer;
 }
 
 #add-todo  {
-  background-color: cyan;
+  border: 1px solid grey;
+  padding: 10px;
+  width: 270px;
+  height: 100px;
+  margin: auto;
+  border-radius: 10px;
+  background-color: #ace600;
+  display: flex;
+  flex-direction: column;
 }
 
-.test-node  {
-  background-color: green;
+#add-todo>input[type=text] {
+  background-color: #f2ffcc;
+  border-radius: 10px;
+  border: 1px solid grey;
+  display: block;
+  margin: auto;
+  width: 250px;
+  height: 50px;
+  text-align: center;
+  font-family: Courier New;
+}
+
+#add-todo>input[type=submit] {
+  display: block;
+  margin: auto;
+  background-color: #4d6600;
+  color: lightgrey;
+  font-family: Courier New;
+  font-weight: none;
+  font-size: medium;
+  border-radius: 15px;
+  border: none;
+  height: 20px;
+  width: 80px;
+  cursor: pointer;
+}
+
+/* ******************************** */
+/* Conditional Stylings Added by JS */
+/* ******************************** */
+
+.todo-done  {
+  text-decoration: line-through;
+}
+
+.todo-done>button:nth-child(3)  {
+  opacity: 0.5;
 }
